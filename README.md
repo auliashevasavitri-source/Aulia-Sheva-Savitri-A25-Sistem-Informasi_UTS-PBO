@@ -1,128 +1,118 @@
 # Sistem Karyawan Kedai Kopi
 
-## Deskripsi Project
+## Deskripsi Program
 
-Sistem Karyawan Kedai Kopi merupakan program sederhana berbasis Java yang digunakan untuk mengelola data karyawan pada sebuah kedai kopi.
+Sistem Karyawan Kedai Kopi merupakan program berbasis Java yang digunakan untuk mengelola data karyawan pada sebuah kedai kopi. Program ini memungkinkan pengguna untuk menambahkan data karyawan berdasarkan jabatan, yaitu **Barista** atau **Kasir**, serta menampilkan data karyawan beserta perhitungan total gaji.
 
-Program ini dibuat sebagai penerapan konsep dasar Pemrograman Berorientasi Objek (PBO), yaitu **Inheritance, Polymorphism, Method Overriding, Method Overloading, Condition, dan Looping**.
-
-Dalam program ini terdapat satu superclass yaitu `Karyawan` dan dua subclass yaitu `Barista` dan `Kasir`.
-
-Program memungkinkan pengguna untuk:
-- Menambahkan data karyawan.
-- Memilih jabatan karyawan sebagai Barista atau Kasir.
-- Menampilkan seluruh data karyawan.
-- Menghitung total gaji berdasarkan jabatan dan jam kerja.
-- Keluar dari program.
+Program dibuat untuk menerapkan konsep **Pemrograman Berorientasi Objek (PBO)**, yaitu Inheritance, Polymorphism, Method Overriding, Method Overloading, percabangan `if-else`, dan perulangan.
 
 ---
 
-## Tujuan
+## Tujuan Program
 
-Tujuan pembuatan program ini adalah:
+Tujuan dari pembuatan program ini adalah:
 
-1. Menerapkan konsep Inheritance dalam Java.
-2. Menerapkan konsep Polymorphism.
-3. Menerapkan Method Overriding.
-4. Menerapkan Method Overloading.
-5. Menerapkan percabangan menggunakan `if-else`.
-6. Menerapkan perulangan menggunakan `while` dan `for`.
-7. Membuat program sederhana dengan konsep Pemrograman Berorientasi Objek.
+1. Mengelola data karyawan kedai kopi.
+2. Menambahkan karyawan berdasarkan jabatan Barista atau Kasir.
+3. Menghitung total gaji berdasarkan jabatan dan jam kerja.
+4. Menampilkan seluruh data karyawan yang telah dimasukkan.
+5. Menerapkan konsep dasar Pemrograman Berorientasi Objek dalam Java.
+
+---
+
+## Studi Kasus
+
+Studi kasus yang digunakan adalah **Sistem Pengelolaan Data Karyawan Kedai Kopi**.
+
+Dalam sebuah kedai kopi terdapat beberapa jenis karyawan, salah satunya adalah Barista dan Kasir. Setiap karyawan memiliki data berupa:
+
+- ID
+- Nama
+- Gaji Pokok
+- Jam Kerja
+- Jabatan
+
+Program memberikan pilihan kepada pengguna untuk menentukan jabatan karyawan saat memasukkan data.
 
 ---
 
 ## Struktur Class
 
-Struktur class pada program adalah sebagai berikut:
+Program terdiri dari empat class utama:
 
 ```text
-                    Karyawan
-                   Superclass
-                       |
-             ---------------------
-             |                   |
-          Barista              Kasir
-         Subclass             Subclass
+Karyawan
+├── Barista
+└── Kasir
+
+Main
 ```
 
-### Karyawan
+### 1. Karyawan
 
-`Karyawan` merupakan **superclass** yang menjadi induk dari class `Barista` dan `Kasir`.
+`Karyawan` merupakan superclass atau class induk yang menyimpan data dasar seluruh karyawan.
 
-Atribut yang terdapat pada class `Karyawan`:
+Atribut yang digunakan:
 
 - `id`
 - `nama`
 - `gajiPokok`
 - `jamKerja`
 
-Method yang terdapat pada class `Karyawan`:
+Class ini juga memiliki method:
 
 - `hitungGaji()`
 - `tampilkanData()`
 
-### Barista
+### 2. Barista
 
-`Barista` merupakan **subclass** dari `Karyawan`.
+`Barista` merupakan subclass dari `Karyawan`.
 
-Inheritance diterapkan menggunakan:
-
-```java
-public class Barista extends Karyawan
-```
-
-Class `Barista` melakukan overriding terhadap:
-
-- `hitungGaji()`
-- `tampilkanData()`
-
-Ketentuan bonus Barista:
+Barista memiliki perhitungan bonus:
 
 - Jam kerja >= 8 jam → bonus Rp500.000
 - Jam kerja < 8 jam → bonus Rp250.000
 
-### Kasir
+Total gaji dihitung dari:
 
-`Kasir` merupakan **subclass** dari `Karyawan`.
-
-Inheritance diterapkan menggunakan:
-
-```java
-public class Kasir extends Karyawan
+```text
+Gaji Pokok + Bonus
 ```
 
-Class `Kasir` melakukan overriding terhadap:
+### 3. Kasir
 
-- `hitungGaji()`
-- `tampilkanData()`
+`Kasir` merupakan subclass dari `Karyawan`.
 
-Ketentuan bonus Kasir:
+Kasir memiliki perhitungan bonus:
 
 - Jam kerja >= 8 jam → bonus Rp400.000
 - Jam kerja < 8 jam → bonus Rp200.000
 
-### Main
+Total gaji dihitung dari:
 
-Class `Main` merupakan class utama untuk menjalankan program.
+```text
+Gaji Pokok + Bonus
+```
 
-Class ini digunakan untuk:
+### 4. Main
 
-- Menampilkan menu.
-- Memasukkan data karyawan.
-- Memilih jabatan Barista atau Kasir.
-- Menyimpan data karyawan.
-- Menampilkan data karyawan.
-- Menerapkan Method Overloading.
-- Menerapkan condition.
-- Menerapkan looping.
+`Main` merupakan class utama yang digunakan untuk menjalankan program.
+
+Class ini menyediakan menu:
+
+```text
+1. Tambah Karyawan
+2. Tampilkan Karyawan
+3. Keluar
+```
 
 ---
 
-# Konsep PBO yang Digunakan
+# Penerapan Konsep PBO
 
 ## 1. Inheritance
 
-Inheritance digunakan agar class `Barista` dan `Kasir` dapat mewarisi atribut dan method dari class `Karyawan`.
+Inheritance atau pewarisan diterapkan dengan membuat class `Barista` dan `Kasir` sebagai turunan dari class `Karyawan`.
 
 Contoh:
 
@@ -136,74 +126,76 @@ dan:
 public class Kasir extends Karyawan
 ```
 
-Dengan demikian, struktur inheritance program adalah:
-
-```text
-Karyawan
-   |
-   |-- Barista
-   |
-   |-- Kasir
-```
+Dengan demikian, Barista dan Kasir dapat menggunakan atribut dan method yang terdapat pada class `Karyawan`.
 
 ---
 
 ## 2. Superclass dan Subclass
 
-Superclass pada program adalah:
+Superclass yang digunakan dalam program adalah:
 
 ```text
 Karyawan
 ```
 
-Subclass pada program adalah:
+Sedangkan subclass yang digunakan adalah:
 
 ```text
 Barista
 Kasir
 ```
 
-`Karyawan` menjadi class induk yang menyediakan atribut dan method dasar.
+Strukturnya:
 
-`Barista` dan `Kasir` mewarisi atribut serta method dari `Karyawan` dan dapat memiliki perilaku yang berbeda melalui Method Overriding.
+```text
+Karyawan
+   ├── Barista
+   └── Kasir
+```
 
 ---
 
 ## 3. Method Overriding
 
-Method Overriding terjadi ketika subclass membuat kembali method yang sudah terdapat pada superclass.
+Method overriding diterapkan pada method:
 
-Pada class `Barista`:
+```java
+hitungGaji()
+```
+
+dan:
+
+```java
+tampilkanData()
+```
+
+Method tersebut terdapat pada class `Karyawan` dan kemudian dibuat kembali pada class `Barista` dan `Kasir` menggunakan annotation:
 
 ```java
 @Override
-public double hitungGaji()
 ```
 
-Pada class `Kasir`:
-
-```java
-@Override
-public double hitungGaji()
-```
-
-Method `tampilkanData()` juga di-override pada class `Barista` dan `Kasir`.
-
-Dengan overriding, setiap jabatan dapat memiliki aturan perhitungan gaji dan tampilan data yang berbeda.
+Hal ini membuat setiap jenis karyawan memiliki implementasi method yang berbeda.
 
 ---
 
 ## 4. Method Overloading
 
-Method Overloading diterapkan pada method `tambahKaryawan()`.
+Method overloading diterapkan pada method:
 
-Method pertama:
+```java
+tambahKaryawan()
+```
+
+Method tersebut dibuat dalam dua bentuk.
+
+Bentuk pertama menerima objek `Karyawan`:
 
 ```java
 public static void tambahKaryawan(Karyawan karyawan)
 ```
 
-Method kedua:
+Bentuk kedua menerima beberapa parameter:
 
 ```java
 public static void tambahKaryawan(
@@ -215,7 +207,7 @@ public static void tambahKaryawan(
 )
 ```
 
-Kedua method memiliki nama yang sama tetapi parameter yang berbeda sehingga merupakan penerapan Method Overloading.
+Kedua method memiliki nama yang sama tetapi parameter yang berbeda.
 
 ---
 
@@ -227,7 +219,7 @@ Polymorphism diterapkan menggunakan:
 ArrayList<Karyawan> daftarKaryawan
 ```
 
-ArrayList tersebut memiliki tipe `Karyawan`, tetapi dapat menyimpan object dari subclass:
+Walaupun tipe data list adalah `Karyawan`, objek yang disimpan dapat berupa:
 
 ```text
 Barista
@@ -237,45 +229,42 @@ Kasir
 Contohnya:
 
 ```java
-Barista barista = new Barista(...);
-Kasir kasir = new Kasir(...);
-
 daftarKaryawan.add(barista);
+```
+
+dan:
+
+```java
 daftarKaryawan.add(kasir);
 ```
 
-Ketika program menjalankan:
+Saat program menjalankan:
 
 ```java
 karyawan.tampilkanData();
 ```
 
-method yang dijalankan menyesuaikan dengan object sebenarnya, yaitu Barista atau Kasir.
+Java akan menjalankan method sesuai dengan jenis objek sebenarnya, yaitu method milik `Barista` atau `Kasir`.
 
 ---
 
-## 6. Condition
+## 6. Percabangan (If-Else)
 
-Program menggunakan percabangan `if-else`.
+Percabangan digunakan untuk menentukan jabatan karyawan.
 
-Contoh pada pemilihan jabatan:
+Contoh:
 
 ```java
 if (pilihanJabatan == 1) {
-
     Barista barista = new Barista(...);
-
 } else if (pilihanJabatan == 2) {
-
     Kasir kasir = new Kasir(...);
-
 } else {
-
     System.out.println("Pilihan jabatan tidak tersedia.");
 }
 ```
 
-Condition juga digunakan dalam menentukan bonus berdasarkan jam kerja.
+Percabangan juga digunakan dalam menentukan bonus berdasarkan jam kerja.
 
 Contoh:
 
@@ -291,33 +280,19 @@ if (jamKerja >= 8) {
 
 ## 7. Looping
 
-Program menggunakan dua jenis looping.
+Perulangan `while` digunakan untuk menjalankan menu utama program secara terus-menerus sampai pengguna memilih menu keluar.
 
-### While
-
-`while` digunakan untuk menjalankan menu utama secara berulang sampai pengguna memilih menu keluar.
+Contoh:
 
 ```java
 while (true) {
-    ...
+    // menu program
 }
 ```
 
-Program akan berhenti ketika pengguna memilih:
+Perulangan `for` digunakan untuk menampilkan seluruh data karyawan yang terdapat dalam `ArrayList`.
 
-```text
-3. Keluar
-```
-
-Kemudian program menjalankan:
-
-```java
-break;
-```
-
-### For
-
-`for` digunakan untuk menampilkan seluruh data karyawan yang tersimpan dalam `ArrayList`.
+Contoh:
 
 ```java
 for (Karyawan karyawan : daftarKaryawan) {
@@ -329,38 +304,35 @@ for (Karyawan karyawan : daftarKaryawan) {
 
 # Alur Program
 
-Alur penggunaan program adalah:
+Alur program secara umum adalah sebagai berikut:
 
 ```text
 Mulai
   |
   v
-Menu Utama
+Menampilkan Menu
   |
   +---- 1. Tambah Karyawan
   |          |
   |          v
-  |      Input ID
+  |      Input ID, Nama,
+  |      Gaji Pokok,
+  |      dan Jam Kerja
   |          |
-  |      Input Nama
-  |          |
-  |      Input Gaji
-  |          |
-  |      Input Jam Kerja
-  |          |
+  |          v
   |      Pilih Jabatan
-  |        /       \
   |       /         \
-  |  Barista       Kasir
+  |   Barista      Kasir
   |       \         /
   |        \       /
-  |         v     v
-  |       Simpan Data
+  |          v
+  |     Data Disimpan
   |
   +---- 2. Tampilkan Karyawan
   |          |
   |          v
-  |      Tampilkan Data
+  |    Menampilkan Data
+  |    dan Total Gaji
   |
   +---- 3. Keluar
              |
@@ -372,153 +344,155 @@ Menu Utama
 
 # Cara Menjalankan Program
 
-## 1. Membuka Project
+## Menggunakan NetBeans
 
-Program dibuat menggunakan bahasa Java dan dijalankan menggunakan NetBeans.
-
-Buka project:
-
-```text
-Sistem_Karyawan_Kedai
-```
-
-## 2. Struktur File
-
-Pastikan terdapat empat file Java:
+1. Buka project pada NetBeans.
+2. Pastikan package yang digunakan adalah:
 
 ```text
-Source Packages
-└── sistem_karyawan_kedai
-    ├── Karyawan.java
-    ├── Barista.java
-    ├── Kasir.java
-    └── Main.java
+sistem_karyawan_kedai
 ```
 
-## 3. Menjalankan Program
+3. Pastikan terdapat empat file:
 
-Buka file `Main.java`.
+```text
+Karyawan.java
+Barista.java
+Kasir.java
+Main.java
+```
 
-Kemudian jalankan program menggunakan tombol **Run Project** atau tekan `F6`.
+4. Pastikan `Main.java` memiliki method:
+
+```java
+public static void main(String[] args)
+```
+
+5. Jalankan program menggunakan **Run Project** atau tekan `F6`.
+
+6. Jika NetBeans meminta Main Class, pilih:
+
+```text
+sistem_karyawan_kedai.Main
+```
 
 ---
 
 # Cara Menggunakan Program
 
-## Menu Utama
+## 1. Menambahkan Karyawan
 
-Saat program dijalankan, akan muncul:
+Pada menu utama pilih:
 
 ```text
-================================
-   SISTEM KARYAWAN KEDAI KOPI
-================================
 1. Tambah Karyawan
-2. Tampilkan Karyawan
-3. Keluar
-Pilih menu:
 ```
 
-Terdapat tiga pilihan:
-
-### 1. Tambah Karyawan
-
-Digunakan untuk menambahkan data karyawan baru.
-
-### 2. Tampilkan Karyawan
-
-Digunakan untuk menampilkan seluruh data karyawan yang telah ditambahkan.
-
-### 3. Keluar
-
-Digunakan untuk mengakhiri program.
-
----
-
-# Contoh Penggunaan Program
-
-## 1. Menambahkan Barista
-
-Pilih menu:
+Kemudian masukkan data:
 
 ```text
-Pilih menu: 1
-```
-
-Masukkan data:
-
-```text
-===== TAMBAH KARYAWAN =====
 ID: 1
 Nama: Asep
 Gaji Pokok: 3000000
 Jam Kerja: 8
 ```
 
-Kemudian pilih jabatan:
+Setelah itu program menampilkan pilihan:
 
 ```text
+Pilih Jabatan:
+1. Barista
+2. Kasir
+Pilih jabatan:
+```
+
+Masukkan `1` untuk Barista atau `2` untuk Kasir.
+
+---
+
+## 2. Menampilkan Data Karyawan
+
+Pada menu utama pilih:
+
+```text
+2. Tampilkan Karyawan
+```
+
+Program akan menampilkan seluruh data karyawan yang sudah dimasukkan.
+
+Contoh:
+
+```text
+===== DAFTAR KARYAWAN =====
+----------------------------
+Jabatan    : Barista
+ID         : 1
+Nama       : Asep
+Gaji Pokok : Rp3000000.0
+Jam Kerja  : 8 jam
+Total Gaji : Rp3500000.0
+----------------------------
+```
+
+---
+
+## 3. Keluar dari Program
+
+Untuk menghentikan program, pilih:
+
+```text
+3. Keluar
+```
+
+Program akan menampilkan:
+
+```text
+Program selesai.
+```
+
+---
+
+# Contoh Penggunaan Program
+
+## Input Karyawan Pertama
+
+```text
+Pilih menu: 1
+
+===== TAMBAH KARYAWAN =====
+ID: 1
+Nama: Asep
+Gaji Pokok: 3000000
+Jam Kerja: 8
+
 Pilih Jabatan:
 1. Barista
 2. Kasir
 Pilih jabatan: 1
-```
 
-Output:
-
-```text
 Data karyawan berhasil ditambahkan.
 ```
 
-Data tersebut dibuat sebagai object `Barista`.
-
----
-
-## 2. Menambahkan Kasir
-
-Pilih kembali:
+## Input Karyawan Kedua
 
 ```text
 Pilih menu: 1
-```
 
-Masukkan:
-
-```text
+===== TAMBAH KARYAWAN =====
 ID: 2
 Nama: Budi
 Gaji Pokok: 2800000
 Jam Kerja: 7
-```
 
-Kemudian:
-
-```text
 Pilih Jabatan:
 1. Barista
 2. Kasir
 Pilih jabatan: 2
-```
 
-Output:
-
-```text
 Data karyawan berhasil ditambahkan.
 ```
 
-Data tersebut dibuat sebagai object `Kasir`.
-
----
-
-## 3. Menampilkan Data Karyawan
-
-Pilih:
-
-```text
-Pilih menu: 2
-```
-
-Contoh output:
+## Hasil Tampilan Data
 
 ```text
 ===== DAFTAR KARYAWAN =====
@@ -537,256 +511,113 @@ Gaji Pokok : Rp2800000.0
 Jam Kerja  : 7 jam
 Total Gaji : Rp3000000.0
 ----------------------------
-```
-
----
-
-# Perhitungan Gaji
-
-## Barista
-
-Jika jam kerja >= 8 jam:
-
-```text
-Total Gaji = Gaji Pokok + Rp500.000
-```
-
-Contoh:
-
-```text
-Gaji Pokok = Rp3.000.000
-Bonus      = Rp500.000
-Total Gaji = Rp3.500.000
-```
-
-Jika jam kerja < 8 jam:
-
-```text
-Total Gaji = Gaji Pokok + Rp250.000
-```
-
-## Kasir
-
-Jika jam kerja >= 8 jam:
-
-```text
-Total Gaji = Gaji Pokok + Rp400.000
-```
-
-Jika jam kerja < 8 jam:
-
-```text
-Total Gaji = Gaji Pokok + Rp200.000
 ```
 
 ---
 
 # Dokumentasi Program Berjalan
 
-Bagian ini berisi dokumentasi berupa screenshot ketika program berhasil dijalankan menggunakan NetBeans.
+Bagian ini digunakan untuk menyimpan screenshot sebagai bukti bahwa program dapat berjalan dengan baik.
 
-## 1. Tampilan Menu Utama
+## 1. Screenshot Menu Utama
 
-Screenshot berikut menunjukkan tampilan awal program setelah berhasil dijalankan.
-
-**Dokumentasi:**
-
-**[MASUKKAN SCREENSHOT MENU UTAMA DI SINI]**
-
-Contoh tampilan:
-
-```text
-================================
-   SISTEM KARYAWAN KEDAI KOPI
-================================
-1. Tambah Karyawan
-2. Tampilkan Karyawan
-3. Keluar
-Pilih menu:
-```
+Masukkan screenshot tampilan awal program setelah dijalankan.
 
 **Keterangan:**
 
-Pada tampilan ini terdapat tiga pilihan menu, yaitu Tambah Karyawan, Tampilkan Karyawan, dan Keluar.
+Menampilkan menu utama yang terdiri dari pilihan Tambah Karyawan, Tampilkan Karyawan, dan Keluar.
+
+![Menu Utama](images/menu-utama.png)
 
 ---
 
-## 2. Proses Menambahkan Data Karyawan
+## 2. Screenshot Proses Input Karyawan
 
-Screenshot berikut menunjukkan proses memasukkan data karyawan.
-
-**Dokumentasi:**
-
-**[MASUKKAN SCREENSHOT PROSES INPUT DATA DI SINI]**
-
-Contoh:
-
-```text
-===== TAMBAH KARYAWAN =====
-ID: 1
-Nama: Asep
-Gaji Pokok: 3000000
-Jam Kerja: 8
-```
+Masukkan screenshot saat pengguna memasukkan data karyawan.
 
 **Keterangan:**
 
-Pengguna memasukkan ID, nama, gaji pokok, dan jam kerja karyawan.
+Menampilkan proses penginputan ID, nama, gaji pokok, dan jam kerja karyawan.
+
+![Input Karyawan](images/input-karyawan.png)
 
 ---
 
-## 3. Pemilihan Jabatan
+## 3. Screenshot Pemilihan Jabatan
 
-Screenshot berikut menunjukkan pilihan jabatan Barista atau Kasir.
-
-**Dokumentasi:**
-
-**[MASUKKAN SCREENSHOT PILIHAN JABATAN DI SINI]**
-
-Contoh:
-
-```text
-Pilih Jabatan:
-1. Barista
-2. Kasir
-Pilih jabatan: 1
-```
+Masukkan screenshot ketika pengguna memilih jabatan Barista atau Kasir.
 
 **Keterangan:**
 
-Pengguna dapat memilih jabatan Barista atau Kasir. Pilihan tersebut menentukan subclass dari object karyawan yang dibuat.
+Menampilkan pilihan jabatan yang tersedia pada sistem, yaitu Barista dan Kasir.
+
+![Pilihan Jabatan](images/pilihan-jabatan.png)
 
 ---
 
-## 4. Hasil Data Karyawan
+## 4. Screenshot Hasil Data Karyawan
 
-Screenshot berikut menunjukkan data karyawan yang telah berhasil ditambahkan.
-
-**Dokumentasi:**
-
-**[MASUKKAN SCREENSHOT HASIL DATA KARYAWAN DI SINI]**
-
-Contoh:
-
-```text
-===== DAFTAR KARYAWAN =====
-----------------------------
-Jabatan    : Barista
-ID         : 1
-Nama       : Asep
-Gaji Pokok : Rp3000000.0
-Jam Kerja  : 8 jam
-Total Gaji : Rp3500000.0
-----------------------------
-Jabatan    : Kasir
-ID         : 2
-Nama       : Budi
-Gaji Pokok : Rp2800000.0
-Jam Kerja  : 7 jam
-Total Gaji : Rp3000000.0
-----------------------------
-```
+Masukkan screenshot setelah memilih menu Tampilkan Karyawan.
 
 **Keterangan:**
 
-Program menampilkan data karyawan yang telah ditambahkan, termasuk jabatan, ID, nama, gaji pokok, jam kerja, dan total gaji.
+Menampilkan data karyawan beserta jabatan, jam kerja, gaji pokok, dan total gaji.
+
+![Data Karyawan](images/data-karyawan.png)
 
 ---
 
-## 5. Program Selesai
+## 5. Screenshot Program Selesai
 
-Screenshot berikut menunjukkan program ketika pengguna memilih menu keluar.
-
-**Dokumentasi:**
-
-**[MASUKKAN SCREENSHOT PROGRAM SELESAI DI SINI]**
-
-Contoh:
-
-```text
-Pilih menu: 3
-
-Program selesai.
-```
+Masukkan screenshot ketika pengguna memilih menu Keluar.
 
 **Keterangan:**
 
-Program berhenti setelah pengguna memilih menu `3. Keluar`.
+Menampilkan pesan bahwa program telah selesai dijalankan.
+
+![Program Selesai](images/program-selesai.png)
 
 ---
 
-# Struktur Folder Dokumentasi
+# Struktur Folder Project
 
-Screenshot program dapat disimpan dalam folder `images`.
-
-Struktur repository:
+Struktur folder project dapat dibuat seperti berikut:
 
 ```text
 Sistem_Karyawan_Kedai
 │
-├── README.md
+├── src
+│   └── sistem_karyawan_kedai
+│       ├── Karyawan.java
+│       ├── Barista.java
+│       ├── Kasir.java
+│       └── Main.java
 │
 ├── images
 │   ├── menu-utama.png
-│   ├── tambah-karyawan.png
+│   ├── input-karyawan.png
 │   ├── pilihan-jabatan.png
-│   ├── daftar-karyawan.png
+│   ├── data-karyawan.png
 │   └── program-selesai.png
 │
-└── src
-    └── sistem_karyawan_kedai
-        ├── Karyawan.java
-        ├── Barista.java
-        ├── Kasir.java
-        └── Main.java
+└── README.md
 ```
-
-Nama file screenshot dapat disesuaikan dengan nama file yang digunakan pada repository GitHub.
 
 ---
 
 # Teknologi yang Digunakan
 
 - Java
-- NetBeans
-- ArrayList
-- Scanner
-- Pemrograman Berorientasi Objek (PBO)
-
----
-
-# Struktur Project
-
-```text
-Sistem_Karyawan_Kedai
-│
-├── README.md
-│
-├── images
-│   ├── menu-utama.png
-│   ├── tambah-karyawan.png
-│   ├── pilihan-jabatan.png
-│   ├── daftar-karyawan.png
-│   └── program-selesai.png
-│
-└── src
-    └── sistem_karyawan_kedai
-        ├── Karyawan.java
-        ├── Barista.java
-        ├── Kasir.java
-        └── Main.java
-```
+- NetBeans IDE
+- Java Collections (`ArrayList`)
+- GitHub
 
 ---
 
 # Kesimpulan
 
-Program Sistem Karyawan Kedai Kopi berhasil menerapkan konsep dasar Pemrograman Berorientasi Objek menggunakan bahasa Java.
+Program Sistem Karyawan Kedai Kopi berhasil dibuat untuk mengelola data karyawan dengan jabatan Barista dan Kasir. Program dapat melakukan penambahan data, menentukan jabatan karyawan, menghitung total gaji berdasarkan jam kerja, serta menampilkan seluruh data karyawan.
 
-Program memiliki superclass `Karyawan` dan dua subclass yaitu `Barista` dan `Kasir` sebagai penerapan Inheritance.
+Dalam pembuatannya, program menerapkan konsep Pemrograman Berorientasi Objek berupa **Inheritance, Superclass dan Subclass, Method Overriding, Method Overloading, dan Polymorphism**, serta menggunakan **percabangan dan perulangan** untuk mengatur alur program.
 
-Selain Inheritance, program juga menerapkan Polymorphism melalui Method Overriding dan Method Overloading. Method Overriding digunakan pada method `hitungGaji()` dan `tampilkanData()`, sedangkan Method Overloading diterapkan pada method `tambahKaryawan()`.
-
-Program juga menggunakan percabangan `if-else` untuk menentukan jabatan dan bonus karyawan serta menggunakan looping `while` dan `for` untuk menjalankan menu dan menampilkan data karyawan.
-
-Dengan demikian, program dapat digunakan sebagai contoh sederhana penerapan konsep Pemrograman Berorientasi Objek dalam studi kasus pengelolaan data karyawan pada kedai kopi.
+Program ini juga memiliki pilihan jabatan secara langsung saat dijalankan sehingga pengguna dapat menentukan apakah karyawan yang ditambahkan merupakan **Barista atau Kasir**.
