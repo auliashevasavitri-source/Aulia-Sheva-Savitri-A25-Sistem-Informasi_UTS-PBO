@@ -527,7 +527,8 @@ Masukkan screenshot tampilan awal program setelah dijalankan.
 
 Menampilkan menu utama yang terdiri dari pilihan Tambah Karyawan, Tampilkan Karyawan, dan Keluar.
 
-![Menu Utama](images/menu-utama.png)
+<img width="417" height="202" alt="image" src="https://github.com/user-attachments/assets/20042482-c9a8-4c57-9bbb-3155da7c4af9" />
+
 
 ---
 
@@ -539,7 +540,8 @@ Masukkan screenshot saat pengguna memasukkan data karyawan.
 
 Menampilkan proses penginputan ID, nama, gaji pokok, dan jam kerja karyawan.
 
-![Input Karyawan](images/input-karyawan.png)
+<img width="414" height="251" alt="image" src="https://github.com/user-attachments/assets/b1b7e294-80cb-4e8b-b33c-f8c358265ed0" />
+
 
 ---
 
@@ -551,7 +553,8 @@ Masukkan screenshot ketika pengguna memilih jabatan Barista atau Kasir.
 
 Menampilkan pilihan jabatan yang tersedia pada sistem, yaitu Barista dan Kasir.
 
-![Pilihan Jabatan](images/pilihan-jabatan.png)
+<img width="467" height="123" alt="image" src="https://github.com/user-attachments/assets/d88c8eca-c5cd-4d53-be89-f4a3db5f2176" />
+
 
 ---
 
@@ -563,7 +566,8 @@ Masukkan screenshot setelah memilih menu Tampilkan Karyawan.
 
 Menampilkan data karyawan beserta jabatan, jam kerja, gaji pokok, dan total gaji.
 
-![Data Karyawan](images/data-karyawan.png)
+<img width="449" height="210" alt="image" src="https://github.com/user-attachments/assets/2fe8a088-0ac2-433b-8fe3-c596187694f1" />
+
 
 ---
 
@@ -575,33 +579,8 @@ Masukkan screenshot ketika pengguna memilih menu Keluar.
 
 Menampilkan pesan bahwa program telah selesai dijalankan.
 
-![Program Selesai](images/program-selesai.png)
+<img width="481" height="185" alt="image" src="https://github.com/user-attachments/assets/8867fa0b-5c77-48f8-accd-880e504e63c2" />
 
----
-
-# Struktur Folder Project
-
-Struktur folder project dapat dibuat seperti berikut:
-
-```text
-Sistem_Karyawan_Kedai
-│
-├── src
-│   └── sistem_karyawan_kedai
-│       ├── Karyawan.java
-│       ├── Barista.java
-│       ├── Kasir.java
-│       └── Main.java
-│
-├── images
-│   ├── menu-utama.png
-│   ├── input-karyawan.png
-│   ├── pilihan-jabatan.png
-│   ├── data-karyawan.png
-│   └── program-selesai.png
-│
-└── README.md
-```
 
 ---
 
